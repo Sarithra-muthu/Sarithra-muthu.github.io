@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarithra MS | AI QA Engineer</title>
+<meta name="description" content="QA lead building LLM-powered testing agents in enterprise production. 10+ years QA across finance, healthcare, insurance and banking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#101013;
+  --bg-raise:#16161b;
+  --bg-raise2:#1c1c22;
+  --line:#26262e;
+  --line-strong:#34343e;
+  --text:#f0efeb;
+  --text-2:#a3a3ad;
+  --text-3:#6f6f7a;
+  --amber:#e4a373;
+  --amber-deep:#c9854f;
+  --green:#6fd1b2;
+  --green-dim:#2a4a3f;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --sans:'Inter',system-ui,sans-serif;
+  --serif:'Fraunces',Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--amber);color:#241203}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(16,16,19,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-family:var(--mono);font-size:14px;color:var(--text)}
+.nav-links{display:flex;gap:26px;font-size:13.5px;color:var(--text-2)}
+.nav-links a:hover{color:var(--text)}
+.nav-links .cta{color:var(--amber)}
+
+.hero{padding:96px 0 72px}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5.5vw,58px);line-height:1.12;letter-spacing:-.01em;max-width:15ch}
+h1 em{font-style:italic;color:var(--amber)}
+.hero p.sub{margin:26px 0 34px;color:var(--text-2);font-size:17px;max-width:56ch}
+.hero p.sub strong{color:var(--text);font-weight:500}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;padding:12px 22px;border-radius:8px;transition:all .18s}
+.btn-fill{background:var(--amber);color:#2a1505}
+.btn-fill:hover{background:var(--amber-deep)}
+.btn-ghost{border:1px solid var(--line-strong);color:var(--text-2)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--text)}
+
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:8px 0 0}
+.metric{background:var(--bg-raise);padding:22px 20px}
+.metric b{display:block;font-family:var(--serif);font-weight:500;font-size:30px;color:var(--text)}
+.metric span{font-size:12.5px;color:var(--text-3)}
+
+section{padding:76px 0}
+.sec-head{margin-bottom:44px}
+.sec-label{font-family:var(--mono);font-size:12.5px;color:var(--text-3);margin-bottom:10px}
+.sec-label::before{content:"// "}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.4vw,36px);line-height:1.2}
+.sec-head p{color:var(--text-2);margin-top:12px;max-width:60ch;font-size:15.5px}
+
+.case{border:1px solid var(--line);border-radius:14px;background:var(--bg-raise);padding:34px;margin-bottom:22px}
+.case-top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap;margin-bottom:6px}
+.case h3{font-family:var(--serif);font-weight:500;font-size:23px}
+.case .cat{font-family:var(--mono);font-size:11.5px;color:var(--amber);border:1px solid rgba(228,163,115,.3);padding:5px 12px;border-radius:20px;white-space:nowrap}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:22px}
+.case-col h4{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--text-3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:9px}
+.case-col p{font-size:14.5px;color:var(--text-2);line-height:1.7}
+.assert{margin-top:24px;font-family:var(--mono);font-size:13.5px;background:#111a16;border:1px solid var(--green-dim);border-radius:8px;padding:14px 18px;color:var(--green);overflow-x:auto;white-space:nowrap}
+.assert .dim{color:#4f7a69}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.tag{font-family:var(--mono);font-size:11.5px;color:var(--text-2);background:var(--bg-raise2);padding:5px 11px;border-radius:5px}
+
+.agents{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.agent{border:1px solid var(--line);border-radius:12px;background:var(--bg-raise);padding:22px;transition:border-color .18s}
+.agent:hover{border-color:var(--line-strong)}
+.agent h3{font-size:15.5px;font-weight:600;margin-bottom:8px}
+.agent p{font-size:13.5px;color:var(--text-2);line-height:1.6}
+.agent .imp{display:block;margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--green)}
+.agent .imp::before{content:"✓ ";color:var(--green)}
+.agent .st{float:right;font-family:var(--mono);font-size:10.5px;color:var(--text-3);border:1px solid var(--line);padding:3px 8px;border-radius:10px}
+
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.how-card{border-left:2px solid var(--amber);padding:4px 0 4px 20px}
+.how-card h3{font-size:15.5px;font-weight:600;margin-bottom:7px}
+.how-card p{font-size:13.5px;color:var(--text-2);line-height:1.65}
+
+.qa-list{display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.qa-row{display:flex;gap:20px;align-items:baseline;padding:20px 26px;background:var(--bg-raise);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.qa-row:last-child{border-bottom:none}
+.qa-row b{font-size:14.5px;font-weight:600;min-width:230px}
+.qa-row span{font-size:13.5px;color:var(--text-2);flex:1;min-width:250px}
+
+.contact{text-align:center;padding:90px 0 70px}
+.contact h2{margin-bottom:14px}
+.contact p{color:var(--text-2);max-width:46ch;margin:0 auto 30px;font-size:15.5px}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:var(--text-3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+@media (max-width:720px){
+  .case-grid{grid-template-columns:1fr}
+  .case{padding:26px 22px}
+  .nav-links{display:none}
+  section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="#" class="logo">sarithra.ms</a>
+    <div class="nav-links">
+      <a href="#work">Case studies</a>
+      <a href="#agents">Agents</a>
+      <a href="#side">Side builds</a>
+      <a href="#approach">Approach</a>
+      <a href="#leadership">QA leadership</a>
+      <a href="#contact" class="cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <h1>I make testing <em>smarter, faster and cheaper</em> with AI.</h1>
+  <p class="sub"><strong>Sarithra MS</strong> - AI QA Engineer and QA Lead with 10+ years across finance, healthcare, insurance and banking, specialising in enterprise ERP, API and mobile testing on global programmes spanning APAC, EMEA, NA and LATAM. Currently at WPP, where I've designed and shipped <strong>10 LLM-powered agents</strong> that run inside real enterprise QA delivery. Not demos, production.</p>
+  <div class="btns">
+    <a class="btn btn-fill" href="#work">View case studies →</a>
+    <a class="btn btn-ghost" href="Sarithra_MS_Resume.pdf" download>Download resume (PDF)</a>
+  </div>
+</header>
+
+<div class="wrap reveal">
+  <div class="metrics">
+    <div class="metric"><b>10</b><span>AI agents designed &amp; shipped</span></div>
+    <div class="metric"><b>~40 hrs</b><span>manual effort saved by one agent alone</span></div>
+    <div class="metric"><b>50%</b><span>test design effort cut with LLM scenario generation</span></div>
+    <div class="metric"><b>4 countries</b><span>worked on the ground: India, Singapore, Spain &amp; the UK</span></div>
+    <div class="metric"><b>10+ yrs</b><span>QA leadership across finance, healthcare, insurance &amp; banking</span></div>
+  </div>
+</div>
+
+<section id="work" class="wrap">
+  <div class="sec-head reveal">
+    <p class="sec-label">selected work</p>
+    <h2>Case studies</h2>
+    <p>Each agent follows the same discipline: a real delivery problem, an LLM-powered approach with a human expert in the loop, and a measured result. Case studies describe the problem, approach and outcome while keeping company and client specifics private.</p>
+  </div>
+
+  <article class="case reveal">
+    <div class="case-top">
+      <h3>Integration API test execution assistant</h3>
+      <span class="cat">Test automation</span>
+    </div>
+    <div class="case-grid">
+      <div class="case-col">
+        <h4>Problem</h4>
+        <p>On a large enterprise integration programme, analysing API test results meant manually comparing responses, hunting discrepancies, and cross-referencing past defects. Slow, repetitive, and error-prone at scale.</p>
+      </div>
+      <div class="case-col">
+        <h4>Approach</h4>
+        <p>An LLM-powered assistant that ingests API execution results, flags discrepancies against expected behaviour, and links anomalies to historical defect patterns. I also authored the API specifications themselves with LLM support, contributing upstream to engineering rather than only verifying downstream.</p>
+      </div>
+    </div>
+    <div class="assert">✓ PASS <span class="dim">·</span> ~40 hrs of manual analysis effort saved <span class="dim">·</span> running in live production integration</div>
+    <div class="tags"><span class="tag">LLM analysis</span><span class="tag">API testing</span><span class="tag">Defect intelligence</span><span class="tag">Production</span></div>
+  </article>
+
+  <article class="case reveal">
+    <div class="case-top">
+      <h3>ScenarioCraft, a scenario design assistant</h3>
+      <span class="cat">Test design · HITL</span>
+    </div>
+    <div class="case-grid">
+      <div class="case-col">
+        <h4>Problem</h4>
+        <p>Turning dense business requirement and solution design documents into module-wise test scenarios is one of QA's biggest time sinks: days of expert reading before a single test case exists.</p>
+      </div>
+      <div class="case-col">
+        <h4>Approach</h4>
+        <p>An assistant that analyses BRDs and SDDs and intelligently proposes structured, module-aware test scenarios. Designed human-in-the-loop by intent: the LLM drafts, the QA expert challenges, refines and approves. Currently being rebuilt as a standalone agent.</p>
+      </div>
+    </div>
+    <div class="assert">✓ PASS <span class="dim">·</span> 50% of scenario &amp; test case preparation effort saved</div>
+    <div class="tags"><span class="tag">BRD analysis</span><span class="tag">HITL design</span><span class="tag">Scenario generation</span><span class="tag">Claude Sonnet</span></div>
+  </article>
+
+  <article class="case reveal">
+    <div class="case-top">
+      <h3>E-invoice compliance validator</h3>
+      <span class="cat">Data validation · HITL</span>
+    </div>
+    <div class="case-grid">
+      <div class="case-col">
+        <h4>Problem</h4>
+        <p>E-invoicing rollouts in Europe carry legal compliance risk: XML files must satisfy schema rules, mapping specifications and country regulations. Manual validation is slow and misses subtle mapping errors.</p>
+      </div>
+      <div class="case-col">
+        <h4>Approach</h4>
+        <p>An LLM validator that checks e-invoice XML against solution designs and best-practice rules, separates data issues from mapping issues, and outputs structured defect reports with severity ratings and owner assignment. Built as a conversation rather than a one-shot report, so the human expert interrogates every finding.</p>
+      </div>
+    </div>
+    <div class="assert">✓ PASS <span class="dim">·</span> critical defects caught before a European go-live</div>
+    <div class="tags"><span class="tag">XML validation</span><span class="tag">Compliance</span><span class="tag">Severity triage</span><span class="tag">HITL</span></div>
+  </article>
+
+  <article class="case reveal">
+    <div class="case-top">
+      <h3>Full-stack AI app, shipped in a 24-hour hackathon</h3>
+      <span class="cat">Build · Deploy</span>
+    </div>
+    <div class="case-grid">
+      <div class="case-col">
+        <h4>Problem</h4>
+        <p>Prove I can take an AI product from zero to deployed, covering architecture, backend, LLM integration, database security and hosting, under real time pressure and outside the enterprise safety net.</p>
+      </div>
+      <div class="case-col">
+        <h4>Approach</h4>
+        <p>Designed and shipped a working MVP in 24 hours: FastAPI backend, Gradio front end, Groq-hosted LLM inference, Supabase with row-level security, deployed to Render and Hugging Face. Built during the 100x Engineers Applied GenAI programme.</p>
+      </div>
+    </div>
+    <div class="assert">✓ PASS <span class="dim">·</span> working MVP deployed to production hosting in 24 hrs</div>
+    <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Gradio</span><span class="tag">Groq</span><span class="tag">Supabase RLS</span><span class="tag">Render</span><span class="tag">Hugging Face</span></div>
+  </article>
+</section>
+
+<section id="agents" class="wrap">
+  <div class="sec-head reveal">
+    <p class="sec-label">the wider portfolio</p>
+    <h2>More agents in service</h2>
+    <p>Built on enterprise LLM platforms and adopted by real QA teams.</p>
+  </div>
+  <div class="agents reveal">
+    <div class="agent"><span class="st">In use</span><h3>Payment file validation</h3><p>LLM-based validation of payment XML against Pain schema, solution designs and test data, used across country rollouts.</p><span class="imp">~5 new defects found in rollouts</span></div>
+    <div class="agent"><span class="st">In use</span><h3>Tax &amp; BRD scenario analysis</h3><p>Interprets complex tax requirements and generates structured QA scenarios for statutory compliance testing.</p><span class="imp">Delivered QA coverage for the US &amp; Canada rollout</span></div>
+    <div class="agent"><span class="st">In use</span><h3>Macwiz, an ERP training bot</h3><p>RAG-based training and reference agent for ERP flows, modules and business processes. Enables team self-service.</p><span class="imp">Reduced onboarding friction across the team</span></div>
+    <div class="agent"><span class="st">In progress</span><h3>RegIntel, regression intelligence</h3><p>Captures regression issues and resolutions from team chats into a structured, searchable knowledge base.</p><span class="imp">Building cumulative institutional memory</span></div>
+    <div class="agent"><span class="st">In progress</span><h3>BRD generator agent</h3><p>Generates business requirement drafts from input requirements, cutting turnaround for country-specific documents.</p><span class="imp">Reducing documentation turnaround</span></div>
+    <div class="agent"><span class="st">In use</span><h3>Release &amp; environment assistant</h3><p>Answers questions on environment status, releases and downtime, reading source emails and chats with citations for every answer.</p><span class="imp">Instant sourced answers, zero manual searching</span></div>
+    <div class="agent"><span class="st">In use</span><h3>Daily briefing automation</h3><p>One automated morning email combining workstream health, urgent items and focus blocks from 14 days of email, chat and calendar.</p><span class="imp">Eliminated morning context-switching</span></div>
+  </div>
+</section>
+
+<section id="side" class="wrap">
+  <div class="sec-head reveal">
+    <p class="sec-label">outside work</p>
+    <h2>Side builds</h2>
+    <p>Learning by shipping. Full applications built with Claude Code for a real user with real stakes, my own child. Proof I build, not just evaluate.</p>
+  </div>
+  <div class="agents reveal">
+    <div class="agent">
+      <span class="st">Node · AI marking</span>
+      <h3>Comprehension Coach</h3>
+      <p>A coaching app for a child preparing for a selective secondary-school entrance exam. An AI examiner marks each written answer against the real mark scheme, judging whether the idea is clearly expressed rather than keyword-matching, with a server-side API proxy so the key never touches the browser. Every attempt is saved and reviewable.</p>
+      <span class="imp">Targets five specific answering habits that lose marks</span>
+    </div>
+    <div class="agent">
+      <span class="st">Node · Full-stack</span>
+      <h3>Lexicon Legends</h3>
+      <p>A browser-based vocabulary game across five themed worlds, covering meanings, synonyms, antonyms and fill-the-gap sentences. Rebuilt a localStorage prototype into a proper Node-served app with persistent progress that survives restarts, using only built-in modules.</p>
+      <span class="imp">Shipped and in daily use at home</span>
+    </div>
+  </div>
+</section>
+
+<section id="approach" class="wrap">
+  <div class="sec-head reveal">
+    <p class="sec-label">what makes it work</p>
+    <h2>How I work</h2>
+    <p>LLM output alone isn't quality engineering. My agents are designed around expert judgment, and that's the difference between a demo and something a delivery team trusts.</p>
+  </div>
+  <div class="how reveal">
+    <div class="how-card"><h3>Human-in-the-loop by design</h3><p>Every agent is a conversation between the model and a domain expert. The LLM drafts and detects; the human challenges, corrects and approves. Iteration is the product.</p></div>
+    <div class="how-card"><h3>LLM-as-a-Judge evaluation</h3><p>Agent output is evaluated systematically for consistency, hallucination and bias before anything reaches a delivery decision.</p></div>
+    <div class="how-card"><h3>RAG grounded in real docs</h3><p>Agents answer from actual requirement documents, schemas and knowledge bases, with citations, rather than from model memory.</p></div>
+    <div class="how-card"><h3>AI cost governance</h3><p>Right model for the right task: lightweight tiers for structured generation, reasoning tiers for analysis. Prompt trimming and context management as standard practice.</p></div>
+    <div class="how-card"><h3>Code where it counts</h3><p>Working knowledge of Python and SQL, enough to build, automate, query data and read what the model writes. Deepening daily through an applied GenAI engineering programme.</p></div>
+  </div>
+</section>
+
+<section id="leadership" class="wrap">
+  <div class="sec-head reveal">
+    <p class="sec-label">the foundation</p>
+    <h2>QA leadership record</h2>
+    <p>The agents work because they're built on a decade of hands-on quality engineering.</p>
+  </div>
+  <div class="qa-list reveal">
+    <div class="qa-row"><b>North America ERP rollout</b><span>Led end-to-end QA for a finance ERP rollout across the US and Canada, including complex tax and statutory compliance scenarios and multi-region UAT.</span></div>
+    <div class="qa-row"><b>Integration programme QA lead</b><span>Currently leading QA for a complex enterprise integration: hands-on API testing, authoring API specifications with LLM support, and partnering with performance and security testing leads.</span></div>
+    <div class="qa-row"><b>Global delivery</b><span>Led in-house and offshore QA teams across EMEA, APAC, NA and LATAM, with UAT cycles involving 120+ users and 1,000+ test cases per release. Worked on the ground in India, Singapore, Spain and the UK.</span></div>
+    <div class="qa-row"><b>Applications &amp; platforms tested</b><span>Enterprise finance ERP, SAP (MM, CM, CRM, CD, BO), web &amp; e-commerce platforms, mobile apps (iOS &amp; Android), REST APIs, Java &amp; .NET applications, SQL databases and mainframe systems.</span></div>
+    <div class="qa-row"><b>AI community leadership</b><span>Proposed and run monthly AI Hub calls for a global QA community, building the central agent hub and managing the sessions month on month. Nominated to an enterprise AI Centre of Excellence build-partner network. Copilot Champion.</span></div>
+    <div class="qa-row"><b>Credentials</b><span>ISTQB AI Certified Tester · ISTQB · 100x Engineers Applied GenAI cohort (6-month, in progress) · BrowserStack AI certification · SAP MM Application Associate.</span></div>
+  </div>
+</section>
+
+<section id="contact" class="contact wrap">
+  <p class="sec-label reveal">get in touch</p>
+  <h2 class="reveal">Open to AI QA Engineer &amp;<br>AI Agent Engineer roles</h2>
+  <p class="reveal">If you're building products where LLM quality actually matters, I'd like to hear about it. Based in London, UK.</p>
+  <div class="btns reveal" style="justify-content:center">
+    <a class="btn btn-fill" href="mailto:sarii.muthu@gmail.com">sarii.muthu@gmail.com</a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/sarithra-muthu" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© 2026 Sarithra MS · London, UK</span>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
