@@ -121,9 +121,9 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
   <div class="wrap nav-in">
     <a href="#" class="logo">sarithra.ms</a>
     <div class="nav-links">
-      <a href="#work">Case studies</a>
+      <a href="#work">Agents in production</a>
       <a href="#agents">Agents</a>
-      <a href="#side">Side builds</a>
+      <a href="#side">Independent builds</a>
       <a href="#approach">Approach</a>
       <a href="#leadership">QA leadership</a>
       <a href="#contact" class="cta">Contact</a>
@@ -135,7 +135,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
   <h1>I make testing <em>smarter, faster and cheaper</em> with AI.</h1>
   <p class="sub"><strong>Sarithra MS</strong> - AI QA Engineer and QA Lead with 10+ years across finance, healthcare, insurance and banking, specialising in enterprise ERP, API and mobile testing on global programmes spanning APAC, EMEA, NA and LATAM. Currently at WPP, where I've designed and shipped <strong>10 LLM-powered agents</strong> that run inside real enterprise QA delivery. Not demos, production.</p>
   <div class="btns">
-    <a class="btn btn-fill" href="#work">View case studies →</a>
+    <a class="btn btn-fill" href="#work">See agents in production →</a>
     <a class="btn btn-ghost" href="Sarithra_MS_Resume.pdf" download>Download resume (PDF)</a>
   </div>
 </header>
@@ -152,9 +152,9 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
 
 <section id="work" class="wrap">
   <div class="sec-head reveal">
-    <p class="sec-label">selected work</p>
-    <h2>Case studies</h2>
-    <p>Each agent follows the same discipline: a real delivery problem, an LLM-powered approach with a human expert in the loop, and a measured result. Case studies describe the problem, approach and outcome while keeping company and client specifics private.</p>
+    <p class="sec-label">enterprise work</p>
+    <h2>Agents in production</h2>
+    <p>Each agent follows the same discipline: a real delivery problem, an LLM-powered approach with a human expert in the loop, and a measured result. Descriptions cover the problem, approach and outcome while keeping company and client specifics private.</p>
   </div>
 
   <article class="case reveal">
@@ -254,21 +254,39 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
 <section id="side" class="wrap">
   <div class="sec-head reveal">
     <p class="sec-label">outside work</p>
-    <h2>Side builds</h2>
-    <p>Learning by shipping. Full applications built with Claude Code for a real user with real stakes, my own child. Proof I build, not just evaluate.</p>
+    <h2>Independent builds</h2>
+    <p>Learning by shipping, end to end: architecture, backend, LLM integration and deployment. Proof I build, not just evaluate.</p>
   </div>
   <div class="agents reveal">
     <div class="agent">
-      <span class="st">Node · AI marking</span>
+      <span class="st">Node · AI-as-examiner</span>
       <h3>Comprehension Coach</h3>
-      <p>A coaching app for a child preparing for a selective secondary-school entrance exam. An AI examiner marks each written answer against the real mark scheme, judging whether the idea is clearly expressed rather than keyword-matching, with a server-side API proxy so the key never touches the browser. Every attempt is saved and reviewable.</p>
-      <span class="imp">Targets five specific answering habits that lose marks</span>
+      <p>A full-stack tool integrating an LLM API as an automated scoring engine, replacing manual grading with a repeatable, criteria-driven evaluation pipeline. Landing page styled as "The Reading Room." Built cost-governance controls on API spend and a content-intake pipeline that parses raw scanned input into structured data, auto-updating a persistent error-tracking dataset for recurring failure patterns.</p>
+      <span class="imp">Turns marking into a repeatable, data-driven process</span>
+    </div>
+    <div class="agent">
+      <span class="st">Python · Reporting</span>
+      <h3>Automated Test Reporting &amp; Trend Analysis Tool</h3>
+      <p>A script-driven pipeline that parses raw assessment results and auto-generates structured, colour-coded HTML reports categorising outcomes as regressions, new issues or resolved items, a RAG-status model analogous to defect triage. Tracks performance across sequential cycles to separate systemic root causes from one-off issues.</p>
+      <span class="imp">Defect-triage thinking applied outside work</span>
+    </div>
+    <div class="agent">
+      <span class="st">FastMCP · Cloud</span>
+      <h3>Satellite Tracker MCP Server</h3>
+      <p>A custom MCP (Model Context Protocol) server exposing satellite-tracking tools to LLM clients, deployed live on FastMCP Cloud. Integrates a public satellite API with a local name-to-ID catalog, implements two tool schemas, and connects as a working custom connector to Claude, verified against live position queries.</p>
+      <span class="imp">Hands-on with the protocol behind agentic tool use</span>
     </div>
     <div class="agent">
       <span class="st">Node · Full-stack</span>
       <h3>Lexicon Legends</h3>
-      <p>A browser-based vocabulary game across five themed worlds, covering meanings, synonyms, antonyms and fill-the-gap sentences. Rebuilt a localStorage prototype into a proper Node-served app with persistent progress that survives restarts, using only built-in modules.</p>
-      <span class="imp">Shipped and in daily use at home</span>
+      <p>A browser-based vocabulary game across five themed worlds, with client-side state persistence tracking progress across sessions. Rebuilt from a localStorage prototype into a proper served app, with a data export/import feature designed for state portability and recovery.</p>
+      <span class="imp">Shipped and in daily use</span>
+    </div>
+    <div class="agent">
+      <span class="st">In progress · FastAPI · Gradio · Groq</span>
+      <h3>Exam Coaching App</h3>
+      <p>An MVP web app addressing a real domain gap: no existing tool tracks a child's error history or week-on-week improvement across a school entrance exam's subjects. Ran a full discovery process, assumption-mapping and structured interviews, before writing product code. Backend on FastAPI (Render), frontend on Gradio (Hugging Face), LLM-generated feedback via Groq. A fuller version is in progress alongside my current AI engineering coursework.</p>
+      <span class="imp">Validated the problem before building the solution</span>
     </div>
   </div>
 </section>
