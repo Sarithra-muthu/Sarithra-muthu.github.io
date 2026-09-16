@@ -73,6 +73,8 @@ h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.4vw,36px);lin
 .case-col p{font-size:14.5px;color:var(--text-2);line-height:1.7}
 .assert{margin-top:24px;font-family:var(--mono);font-size:13.5px;background:#111a16;border:1px solid var(--green-dim);border-radius:8px;padding:14px 18px;color:var(--green);overflow-x:auto;white-space:nowrap}
 .assert .dim{color:#4f7a69}
+.assert.progress{background:#1a140d;border-color:var(--amber-deep);color:var(--amber)}
+.assert.progress .dim{color:#8a6a4f}
 .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
 .tag{font-family:var(--mono);font-size:11.5px;color:var(--text-2);background:var(--bg-raise2);padding:5px 11px;border-radius:5px}
 
@@ -121,9 +123,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
   <div class="wrap nav-in">
     <a href="#" class="logo">sarithra.ms</a>
     <div class="nav-links">
-      <a href="#work">Agents in production</a>
+      <a href="#work">Case studies</a>
       <a href="#agents">Agents</a>
-      <a href="#side">Independent builds</a>
       <a href="#approach">Approach</a>
       <a href="#leadership">QA leadership</a>
       <a href="#contact" class="cta">Contact</a>
@@ -132,10 +133,10 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
 </nav>
 
 <header class="hero wrap">
-  <h1>I make testing <em>smarter, faster and cheaper</em> with AI.</h1>
-  <p class="sub"><strong>Sarithra MS</strong> - AI QA Engineer and QA Lead with 10+ years across finance, healthcare, insurance and banking, specialising in enterprise ERP, API and mobile testing on global programmes spanning APAC, EMEA, NA and LATAM. Currently at WPP, where I've designed and shipped <strong>10 LLM-powered agents</strong> that run inside real enterprise QA delivery. Not demos, production.</p>
+  <h1>I make delivery work <em>smarter, faster and cheaper</em> with AI.</h1>
+  <p class="sub"><strong>Sarithra MS</strong> - AI QA Engineer and QA Lead with 10+ years across finance, healthcare, insurance and banking, specialising in enterprise ERP, API and mobile testing on global programmes spanning APAC, EMEA, NA and LATAM. Currently at WPP, where I've designed and shipped <strong>10 LLM-powered agents</strong> that run inside real enterprise delivery, from test execution to programme reporting. Not demos, production.</p>
   <div class="btns">
-    <a class="btn btn-fill" href="#work">See agents in production →</a>
+    <a class="btn btn-fill" href="#work">View case studies →</a>
     <a class="btn btn-ghost" href="Sarithra_MS_Resume.pdf" download>Download resume (PDF)</a>
   </div>
 </header>
@@ -152,9 +153,9 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
 
 <section id="work" class="wrap">
   <div class="sec-head reveal">
-    <p class="sec-label">enterprise work</p>
-    <h2>Agents in production</h2>
-    <p>Each agent follows the same discipline: a real delivery problem, an LLM-powered approach with a human expert in the loop, and a measured result. Descriptions cover the problem, approach and outcome while keeping company and client specifics private.</p>
+    <p class="sec-label">selected work</p>
+    <h2>Case studies</h2>
+    <p>Each build follows the same discipline: a real delivery problem, an LLM-powered approach with a human expert in the loop, and a measured result. Case studies describe the problem, approach and outcome while keeping company and client specifics private.</p>
   </div>
 
   <article class="case reveal">
@@ -169,11 +170,30 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
       </div>
       <div class="case-col">
         <h4>Approach</h4>
-        <p>An LLM-powered assistant that ingests API execution results, flags discrepancies against expected behaviour, and links anomalies to historical defect patterns. I also authored the API specifications themselves with LLM support, contributing upstream to engineering rather than only verifying downstream.</p>
+        <p>An LLM-powered assistant that ingests API execution results, flags discrepancies against expected behaviour, and links anomalies to historical defect patterns. I also authored the API specifications themselves with LLM support, contributing upstream to engineering rather than only verifying downstream. Extending the same LLM-assisted analysis approach into performance testing, interpreting API performance-test results alongside the performance engineering team.</p>
       </div>
     </div>
     <div class="assert">✓ PASS <span class="dim">·</span> ~40 hrs of manual analysis effort saved <span class="dim">·</span> running in live production integration</div>
-    <div class="tags"><span class="tag">LLM analysis</span><span class="tag">API testing</span><span class="tag">Defect intelligence</span><span class="tag">Production</span></div>
+    <div class="tags"><span class="tag">LLM analysis</span><span class="tag">API testing</span><span class="tag">Defect intelligence</span><span class="tag">Performance testing</span><span class="tag">Production</span></div>
+  </article>
+
+  <article class="case reveal">
+    <div class="case-top">
+      <h3>Cross-team dependency and commitment auditor</h3>
+      <span class="cat">Programme governance · AI skill</span>
+    </div>
+    <div class="case-grid">
+      <div class="case-col">
+        <h4>Problem</h4>
+        <p>Teams routinely make informal commitments in chats, emails and meetings, but these promises rarely make it into a central tracker, so dependencies get missed until they cause a delay.</p>
+      </div>
+      <div class="case-col">
+        <h4>Approach</h4>
+        <p>An AI skill that scans conversations and correspondence for statements that represent commitments, then compares them against the live project plan to surface gaps and mismatches. Built to work on any project rather than tied to one platform, making it reusable across teams and programmes, not just QA.</p>
+      </div>
+    </div>
+    <div class="assert">✓ PASS <span class="dim">·</span> surfaces missed cross-team commitments before they become delivery risk</div>
+    <div class="tags"><span class="tag">Commitment tracking</span><span class="tag">Cross-team dependencies</span><span class="tag">Programme governance</span><span class="tag">Reusable</span></div>
   </article>
 
   <article class="case reveal">
@@ -232,62 +252,61 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
     <div class="assert">✓ PASS <span class="dim">·</span> working MVP deployed to production hosting in 24 hrs</div>
     <div class="tags"><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Gradio</span><span class="tag">Groq</span><span class="tag">Supabase RLS</span><span class="tag">Render</span><span class="tag">Hugging Face</span></div>
   </article>
+
+  <article class="case reveal">
+    <div class="case-top">
+      <h3>AI Test Suite Auditor + Mutation Lab</h3>
+      <span class="cat">Agentic QA · Capstone</span>
+    </div>
+    <div class="case-grid">
+      <div class="case-col">
+        <h4>Problem</h4>
+        <p>Reviewing test cases written by both people and LLMs means catching incorrect expected results, duplicates, unsupported assumptions and requirement ambiguities, then tracing tests back to requirements to find coverage gaps. The hard part: a genuine test defect and an unresolved requirement gap look identical until you dig in, but they need different fixes.</p>
+      </div>
+      <div class="case-col">
+        <h4>Approach</h4>
+        <p>A planned agent that will audit test suites and requirements written by people or LLMs, flagging incorrect expected results, duplicates, unsupported assumptions, missing coverage and requirement ambiguities, asking clarification questions and building a requirements traceability matrix linking requirements to tests. A manual pilot validated the approach first: a plain LLM review compared against two independent human reviewers across two requirement sets, ahead of building and testing the actual auditor. Mutation Lab, an optional extension, will introduce a deliberate bug into a small sample API to test whether the audited suite catches it.</p>
+      </div>
+    </div>
+    <div class="assert progress">◐ IN PROGRESS <span class="dim">·</span> manual pilot complete, auditor build and paired human+AI review next</div>
+    <div class="tags"><span class="tag">Agentic QA</span><span class="tag">Requirements traceability</span><span class="tag">Test auditing</span><span class="tag">Human + AI comparison</span></div>
+  </article>
+
+  <article class="case reveal">
+    <div class="case-top">
+      <h3>Satellite Tracker MCP Server</h3>
+      <span class="cat">Tooling · MCP</span>
+    </div>
+    <div class="case-grid">
+      <div class="case-col">
+        <h4>Problem</h4>
+        <p>An AI assistant can't reach live external data unless someone builds and exposes that connection as a proper callable tool.</p>
+      </div>
+      <div class="case-col">
+        <h4>Approach</h4>
+        <p>A custom Model Context Protocol (MCP) server, deployed on FastMCP Cloud, integrating a live external satellite-tracking API and exposing it as callable tools for any MCP-compatible assistant.</p>
+      </div>
+    </div>
+    <div class="assert">✓ PASS <span class="dim">·</span> verified live in Claude.ai</div>
+    <div class="tags"><span class="tag">MCP</span><span class="tag">Tool calling</span><span class="tag">API integration</span><span class="tag">FastMCP Cloud</span></div>
+  </article>
 </section>
 
 <section id="agents" class="wrap">
   <div class="sec-head reveal">
     <p class="sec-label">the wider portfolio</p>
-    <h2>More agents in service</h2>
+    <h2>More AI work in service</h2>
     <p>Built on enterprise LLM platforms and adopted by real QA teams.</p>
   </div>
   <div class="agents reveal">
-    <div class="agent"><span class="st">In use</span><h3>Payment file validation</h3><p>LLM-based validation of payment XML against Pain schema, solution designs and test data, used across country rollouts.</p><span class="imp">~5 new defects found in rollouts</span></div>
+    <div class="agent"><span class="st">In use</span><h3>Payment file validation</h3><p>LLM-based validation of payment XML against Pain schema, solution designs and test data, used across country rollouts.</p><span class="imp">~8 new defects found in a single run</span></div>
     <div class="agent"><span class="st">In use</span><h3>Tax &amp; BRD scenario analysis</h3><p>Interprets complex tax requirements and generates structured QA scenarios for statutory compliance testing.</p><span class="imp">Delivered QA coverage for the US &amp; Canada rollout</span></div>
     <div class="agent"><span class="st">In use</span><h3>Macwiz, an ERP training bot</h3><p>RAG-based training and reference agent for ERP flows, modules and business processes. Enables team self-service.</p><span class="imp">Reduced onboarding friction across the team</span></div>
     <div class="agent"><span class="st">In progress</span><h3>RegIntel, regression intelligence</h3><p>Captures regression issues and resolutions from team chats into a structured, searchable knowledge base.</p><span class="imp">Building cumulative institutional memory</span></div>
     <div class="agent"><span class="st">In progress</span><h3>BRD generator agent</h3><p>Generates business requirement drafts from input requirements, cutting turnaround for country-specific documents.</p><span class="imp">Reducing documentation turnaround</span></div>
     <div class="agent"><span class="st">In use</span><h3>Release &amp; environment assistant</h3><p>Answers questions on environment status, releases and downtime, reading source emails and chats with citations for every answer.</p><span class="imp">Instant sourced answers, zero manual searching</span></div>
     <div class="agent"><span class="st">In use</span><h3>Daily briefing automation</h3><p>One automated morning email combining workstream health, urgent items and focus blocks from 14 days of email, chat and calendar.</p><span class="imp">Eliminated morning context-switching</span></div>
-  </div>
-</section>
-
-<section id="side" class="wrap">
-  <div class="sec-head reveal">
-    <p class="sec-label">outside work</p>
-    <h2>Independent builds</h2>
-    <p>Learning by shipping, end to end: architecture, backend, LLM integration and deployment. Proof I build, not just evaluate.</p>
-  </div>
-  <div class="agents reveal">
-    <div class="agent">
-      <span class="st">Node · AI-as-examiner</span>
-      <h3>Comprehension Coach</h3>
-      <p>A full-stack tool integrating an LLM API as an automated scoring engine, replacing manual grading with a repeatable, criteria-driven evaluation pipeline. Landing page styled as "The Reading Room." Built cost-governance controls on API spend and a content-intake pipeline that parses raw scanned input into structured data, auto-updating a persistent error-tracking dataset for recurring failure patterns.</p>
-      <span class="imp">Turns marking into a repeatable, data-driven process</span>
-    </div>
-    <div class="agent">
-      <span class="st">Python · Reporting</span>
-      <h3>Automated Test Reporting &amp; Trend Analysis Tool</h3>
-      <p>A script-driven pipeline that parses raw assessment results and auto-generates structured, colour-coded HTML reports categorising outcomes as regressions, new issues or resolved items, a RAG-status model analogous to defect triage. Tracks performance across sequential cycles to separate systemic root causes from one-off issues.</p>
-      <span class="imp">Defect-triage thinking applied outside work</span>
-    </div>
-    <div class="agent">
-      <span class="st">FastMCP · Cloud</span>
-      <h3>Satellite Tracker MCP Server</h3>
-      <p>A custom MCP (Model Context Protocol) server exposing satellite-tracking tools to LLM clients, deployed live on FastMCP Cloud. Integrates a public satellite API with a local name-to-ID catalog, implements two tool schemas, and connects as a working custom connector to Claude, verified against live position queries.</p>
-      <span class="imp">Hands-on with the protocol behind agentic tool use</span>
-    </div>
-    <div class="agent">
-      <span class="st">Node · Full-stack</span>
-      <h3>Lexicon Legends</h3>
-      <p>A browser-based vocabulary game across five themed worlds, with client-side state persistence tracking progress across sessions. Rebuilt from a localStorage prototype into a proper served app, with a data export/import feature designed for state portability and recovery.</p>
-      <span class="imp">Shipped and in daily use</span>
-    </div>
-    <div class="agent">
-      <span class="st">In progress · FastAPI · Gradio · Groq</span>
-      <h3>Exam Coaching App</h3>
-      <p>An MVP web app addressing a real domain gap: no existing tool tracks a child's error history or week-on-week improvement across a school entrance exam's subjects. Ran a full discovery process, assumption-mapping and structured interviews, before writing product code. Backend on FastAPI (Render), frontend on Gradio (Hugging Face), LLM-generated feedback via Groq. A fuller version is in progress alongside my current AI engineering coursework.</p>
-      <span class="imp">Validated the problem before building the solution</span>
-    </div>
+    <div class="agent"><span class="st">In use</span><h3>Weekly work log &amp; achievement journal generator</h3><p>Draws from inbox, calendar and chat activity each week to produce a structured work log across delivery, problems solved and impact, and appends it to a running achievement journal.</p><span class="imp">Automates weekly self-reporting and evidence capture, zero manual effort</span></div>
   </div>
 </section>
 
@@ -315,10 +334,10 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
   <div class="qa-list reveal">
     <div class="qa-row"><b>North America ERP rollout</b><span>Led end-to-end QA for a finance ERP rollout across the US and Canada, including complex tax and statutory compliance scenarios and multi-region UAT.</span></div>
     <div class="qa-row"><b>Integration programme QA lead</b><span>Currently leading QA for a complex enterprise integration: hands-on API testing, authoring API specifications with LLM support, and partnering with performance and security testing leads.</span></div>
-    <div class="qa-row"><b>Global delivery</b><span>Led in-house and offshore QA teams across EMEA, APAC, NA and LATAM, with UAT cycles involving 120+ users and 1,000+ test cases per release. Worked on the ground in India, Singapore, Spain and the UK.</span></div>
+    <div class="qa-row"><b>Global delivery</b><span>Led in-house and offshore QA teams across EMEA, APAC, NA and LATAM, with UAT cycles involving 120+ users and 1,000+ test cases per release, including concurrent ERP go-lives across multiple countries. Worked on the ground in India, Singapore, Spain and the UK.</span></div>
     <div class="qa-row"><b>Applications &amp; platforms tested</b><span>Enterprise finance ERP, SAP (MM, CM, CRM, CD, BO), web &amp; e-commerce platforms, mobile apps (iOS &amp; Android), REST APIs, Java &amp; .NET applications, SQL databases and mainframe systems.</span></div>
     <div class="qa-row"><b>AI community leadership</b><span>Proposed and run monthly AI Hub calls for a global QA community, building the central agent hub and managing the sessions month on month. Nominated to an enterprise AI Centre of Excellence build-partner network. Copilot Champion.</span></div>
-    <div class="qa-row"><b>Credentials</b><span>ISTQB AI Certified Tester · ISTQB · 100x Engineers Applied GenAI cohort (6-month, in progress) · BrowserStack AI certification · SAP MM Application Associate.</span></div>
+    <div class="qa-row"><b>Credentials</b><span>ISTQB AI Certified Tester · ISTQB · 100x Engineers Applied GenAI cohort, Cohort 7 (final module) · BrowserStack AI certification · SAP MM Application Associate.</span></div>
   </div>
 </section>
 
@@ -328,7 +347,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
   <p class="reveal">If you're building products where LLM quality actually matters, I'd like to hear about it. Based in London, UK.</p>
   <div class="btns reveal" style="justify-content:center">
     <a class="btn btn-fill" href="mailto:sarii.muthu@gmail.com">sarii.muthu@gmail.com</a>
-    <a class="btn btn-ghost" href="https://www.linkedin.com/in/sarithra-muthu" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/sarithra-ms" target="_blank" rel="noopener">LinkedIn ↗</a>
   </div>
 </section>
 
