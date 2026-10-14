@@ -269,7 +269,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
 
   <article class="case reveal">
     <div class="case-top">
-      <h3>AI Test Suite Auditor + Mutation Lab</h3>
+      <h3>AI Test Suite Auditor</h3>
       <span class="cat">Agentic QA · Capstone</span>
     </div>
     <div class="case-grid">
@@ -279,11 +279,11 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:va
       </div>
       <div class="case-col">
         <h4>Approach</h4>
-        <p>A planned agent that will audit test suites and requirements written by people or LLMs, flagging incorrect expected results, duplicates, unsupported assumptions, missing coverage and requirement ambiguities, asking clarification questions and building a requirements traceability matrix linking requirements to tests. A manual pilot validated the approach first: a plain LLM review compared against two independent human reviewers across two requirement sets, ahead of building and testing the actual auditor. Mutation Lab, an optional extension, will introduce a deliberate bug into a small sample API to test whether the audited suite catches it.</p>
+        <p>A deployed application with three LLM stages (requirements analysis, test-case audit, traceability matrix) and a deterministic check that rejects any finding citing a test that doesn't exist or quoting text that isn't in the source. A human reviewer accepts or rejects each finding. I evaluated it on 14 requirement and test packages, 10 of them held out, comparing human only, auditor only and human plus auditor against a draft reference key. In this pilot, human plus auditor found 69-76% of issues against 31% for human only, and no condition found the boundary-value gaps. Two reviewers and a draft key, so a pilot, not a conclusive result.</p>
       </div>
     </div>
-    <div class="assert progress">◐ IN PROGRESS <span class="dim">·</span> manual pilot complete, auditor build and paired human+AI review next</div>
-    <div class="tags"><span class="tag">Agentic QA</span><span class="tag">Requirements traceability</span><span class="tag">Test auditing</span><span class="tag">Human + AI comparison</span></div>
+    <div class="assert">✓ BUILT <span class="dim">·</span> deployed and evaluated <span class="dim">·</span> pilot results, <a href="https://github.com/Sarithra-muthu/test-suite-auditor" target="_blank" rel="noopener" style="text-decoration:underline">source on GitHub ↗</a></div>
+    <div class="tags"><span class="tag">Agentic QA</span><span class="tag">Requirements traceability</span><span class="tag">Deterministic verification</span><span class="tag">Held-out evaluation</span></div>
   </article>
 
   <article class="case reveal">
