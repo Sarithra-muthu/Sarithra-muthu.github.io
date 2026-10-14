@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarithra MS | Applied AI Builder</title>
+<meta name="description" content="Applied AI builder: LLM agents, structured outputs, deterministic verification and evaluation, shipped into real enterprise delivery. 11+ years in enterprise delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#101013;
+  --bg-raise:#16161b;
+  --bg-raise2:#1c1c22;
+  --line:#26262e;
+  --line-strong:#34343e;
+  --text:#f0efeb;
+  --text-2:#a3a3ad;
+  --text-3:#6f6f7a;
+  --amber:#e4a373;
+  --amber-deep:#c9854f;
+  --green:#6fd1b2;
+  --green-dim:#2a4a3f;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --sans:'Inter',system-ui,sans-serif;
+  --serif:'Fraunces',Georgia,serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--amber);color:#241203}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(16,16,19,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-family:var(--mono);font-size:14px;color:var(--text)}
+.nav-links{display:flex;gap:26px;font-size:13.5px;color:var(--text-2)}
+.nav-links a:hover{color:var(--text)}
+.nav-links .cta{color:var(--amber)}
+
+.hero{padding:96px 0 72px}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,5.5vw,58px);line-height:1.12;letter-spacing:-.01em;max-width:15ch}
+h1 em{font-style:italic;color:var(--amber)}
+.hero p.sub{margin:26px 0 34px;color:var(--text-2);font-size:17px;max-width:56ch}
+.hero p.sub strong{color:var(--text);font-weight:500}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;padding:12px 22px;border-radius:8px;transition:all .18s}
+.btn-fill{background:var(--amber);color:#2a1505}
+.btn-fill:hover{background:var(--amber-deep)}
+.btn-ghost{border:1px solid var(--line-strong);color:var(--text-2)}
+.btn-ghost:hover{border-color:var(--amber);color:var(--text)}
+
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:8px 0 0}
+.metric{background:var(--bg-raise);padding:22px 20px}
+.metric b{display:block;font-family:var(--serif);font-weight:500;font-size:30px;color:var(--text)}
+.metric span{font-size:12.5px;color:var(--text-3)}
+
+section{padding:76px 0}
+.sec-head{margin-bottom:44px}
+.sec-label{font-family:var(--mono);font-size:12.5px;color:var(--text-3);margin-bottom:10px}
+.sec-label::before{content:"// "}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.4vw,36px);line-height:1.2}
+.sec-head p{color:var(--text-2);margin-top:12px;max-width:60ch;font-size:15.5px}
+
+.case{border:1px solid var(--line);border-radius:14px;background:var(--bg-raise);padding:34px;margin-bottom:22px}
+.case-top{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;flex-wrap:wrap;margin-bottom:6px}
+.case h3{font-family:var(--serif);font-weight:500;font-size:23px}
+.case .cat{font-family:var(--mono);font-size:11.5px;color:var(--amber);border:1px solid rgba(228,163,115,.3);padding:5px 12px;border-radius:20px;white-space:nowrap}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:22px}
+.case-col h4{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--text-3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:9px}
+.case-col p{font-size:14.5px;color:var(--text-2);line-height:1.7}
+.assert{margin-top:24px;font-family:var(--mono);font-size:13.5px;background:#111a16;border:1px solid var(--green-dim);border-radius:8px;padding:14px 18px;color:var(--green);overflow-x:auto;white-space:nowrap}
+.assert .dim{color:#4f7a69}
+.assert.progress{background:#1a140d;border-color:var(--amber-deep);color:var(--amber)}
+.assert.progress .dim{color:#8a6a4f}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.tag{font-family:var(--mono);font-size:11.5px;color:var(--text-2);background:var(--bg-raise2);padding:5px 11px;border-radius:5px}
+
+.agents{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.agent{border:1px solid var(--line);border-radius:12px;background:var(--bg-raise);padding:22px;transition:border-color .18s}
+.agent:hover{border-color:var(--line-strong)}
+.agent h3{font-size:15.5px;font-weight:600;margin-bottom:8px}
+.agent p{font-size:13.5px;color:var(--text-2);line-height:1.6}
+.agent .imp{display:block;margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--green)}
+.agent .imp::before{content:"✓ ";color:var(--green)}
+.agent .st{float:right;font-family:var(--mono);font-size:10.5px;color:var(--text-3);border:1px solid var(--line);padding:3px 8px;border-radius:10px}
+
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.how-card{border-left:2px solid var(--amber);padding:4px 0 4px 20px}
+.how-card h3{font-size:15.5px;font-weight:600;margin-bottom:7px}
+.how-card p{font-size:13.5px;color:var(--text-2);line-height:1.65}
+
+.qa-list{display:grid;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.qa-row{display:flex;gap:20px;align-items:baseline;padding:20px 26px;background:var(--bg-raise);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.qa-row:last-child{border-bottom:none}
+.qa-row b{font-size:14.5px;font-weight:600;min-width:230px}
+.qa-row span{font-size:13.5px;color:var(--text-2);flex:1;min-width:250px}
+
+.contact{text-align:center;padding:90px 0 70px}
+.contact h2{margin-bottom:14px}
+.contact p{color:var(--text-2);max-width:46ch;margin:0 auto 30px;font-size:15.5px}
+footer{border-top:1px solid var(--line);padding:26px 0;font-size:12.5px;color:var(--text-3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+@media (max-width:720px){
+  .case-grid{grid-template-columns:1fr}
+  .case{padding:26px 22px}
+  .nav-links{display:none}
+  section{padding:56px 0}
+}
+
+h1{max-width:19ch}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:22px 0 4px;font-family:var(--mono);font-size:12px}
+.flow span{background:var(--bg-raise2);border:1px solid var(--line-strong);color:var(--text-2);padding:7px 12px;border-radius:6px}
+.flow span.chk{border-color:var(--green-dim);color:var(--green);background:#111a16}
+.flow i{color:var(--text-3);font-style:normal}
+.res{width:100%;border-collapse:collapse;margin-top:6px;font-size:14px}
+.res th,.res td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);color:var(--text-2)}
+.res th{font-family:var(--mono);font-size:11.5px;font-weight:500;color:var(--text-3);text-transform:uppercase;letter-spacing:.06em}
+.res td:last-child{color:var(--green);font-family:var(--mono)}
+.links{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.note{font-size:13px;color:var(--text-3);margin-top:14px;line-height:1.6}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="#" class="logo">sarithra.ms</a>
+    <div class="nav-links">
+      <a href="#flagship">Flagship build</a>
+      <a href="#shipped">Shipped agents</a>
+      <a href="#approach">How I build</a>
+      <a href="#background">Background</a>
+      <a href="#contact" class="cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <h1>I ship LLM agents into real delivery with <em>every output checked</em>.</h1>
+  <p class="sub"><strong>Sarithra MS</strong> - applied AI builder with 11+ years of enterprise delivery behind me. I've shipped <strong>10 LLM-powered agents</strong> into live delivery at WPP, and built, deployed and evaluated an end-to-end AI application of my own. A QA background means I design for how AI fails in production: every output checked, traceable and reviewable by a person.</p>
+  <div class="btns">
+    <a class="btn btn-fill" href="#flagship">See the flagship build →</a>
+  </div>
+</header>
+
+<div class="wrap reveal">
+  <div class="metrics">
+    <div class="metric"><b>10</b><span>LLM agents shipped into live delivery</span></div>
+    <div class="metric"><b>~40 hrs</b><span>manual effort saved by one agent</span></div>
+    <div class="metric"><b>50%</b><span>test design effort cut with LLM scenario generation</span></div>
+    <div class="metric"><b>14</b><span>packages in my own held-out evaluation</span></div>
+    <div class="metric"><b>11+ yrs</b><span>enterprise delivery, consultancy and client-side</span></div>
+  </div>
+</div>
+
+<section id="flagship" class="wrap">
+  <div class="sec-head reveal">
+    <p class="sec-label">flagship build</p>
+    <h2>AI Test Suite Auditor</h2>
+    <p>A deployed, multi-user application that audits requirements and test cases for gaps, duplicates and ambiguities, and builds a requirements traceability matrix. Built and evaluated end to end as my capstone on the 100x Engineers Applied GenAI programme.</p>
+  </div>
+
+  <article class="case reveal">
+    <div class="case-top">
+      <h3>From messy inputs to reviewable findings</h3>
+      <span class="cat">Agentic system · Capstone</span>
+    </div>
+    <div class="case-grid">
+      <div class="case-col">
+        <h4>Problem</h4>
+        <p>Reviewing test cases written by people or LLMs means catching wrong expected results, duplicates, unsupported assumptions and requirement ambiguities, then tracing tests back to requirements. A model that does this has to be trusted, which means every claim it makes must be checkable.</p>
+      </div>
+      <div class="case-col">
+        <h4>Approach</h4>
+        <p>Three separate LLM stages with typed outputs, so one failing stage never hides the others. A deterministic check, with no second LLM, rejects any finding that cites a test that doesn't exist or quotes text that isn't in the source. A human reviewer then accepts or rejects each finding, and every decision is stored.</p>
+      </div>
+    </div>
+    <div class="flow">
+      <span>Requirements + tests</span><i>→</i><span>1 · Analyse requirements</span><i>→</i><span>2 · Audit test cases</span><i>→</i><span>3 · Build traceability matrix</span><i>→</i><span class="chk">Deterministic verification</span><i>→</i><span>Human review</span>
+    </div>
+    <div class="tags">
+      <span class="tag">Streamlit UI</span><span class="tag">FastAPI on Render</span><span class="tag">Supabase Postgres</span><span class="tag">Groq · gpt-oss-120b</span><span class="tag">Strict JSON schema</span><span class="tag">Pydantic</span><span class="tag">pytest</span>
+    </div>
+    <div class="links">
+      <a class="btn btn-fill" href="https://test-suite-auditor-ui.onrender.com" target="_blank" rel="noopener">Live app ↗</a>
+      <a class="btn btn-ghost" href="https://github.com/Sarithra-muthu/test-suite-auditor" target="_blank" rel="noopener">Source code ↗</a>
+    </div>
+    <p class="note">The live app runs on a free tier, so the first load can take about a minute to wake up. Access is by account; ask me for a demo login.</p>
+  </article>
+
+  <article class="case reveal">
+    <div class="case-top">
+      <h3>Built for production, not just a demo</h3>
+      <span class="cat">Production-lite</span>
+    </div>
+    <div class="how" style="margin-top:20px">
+      <div class="how-card"><h3>Typed contracts</h3><p>Every stage returns Pydantic models against a strict JSON schema at low temperature, so malformed output fails loudly instead of flowing downstream.</p></div>
+      <div class="how-card"><h3>Failure handling</h3><p>Retries and timeouts per stage. Each package finishes as complete, partial or failed, so a partial result is clearly labelled and still useful.</p></div>
+      <div class="how-card"><h3>Audit trail</h3><p>Reviewer decisions are written to an append-only table, so what was accepted, rejected and by whom can always be reconstructed.</p></div>
+      <div class="how-card"><h3>Access control</h3><p>bcrypt-hashed passwords with server-side access checks, so users only see their own packages.</p></div>
+      <div class="how-card"><h3>Automated tests</h3><p>About 20 pytest cases cover validation and access rules.</p></div>
+    </div>
+  </article>
+
+  <article class="case reveal">
+    <div class="case-top">
+      <h3>Evaluated, not just demoed</h3>
+      <span class="cat">Pilot evaluation</span>
+    </div>
+    <div class="case-grid">
+      <div class="case-col">
+        <h4>Design</h4>
+        <p>14 requirement and test packages: 4 for development and 10 held out. Three conditions: human only, auditor only, and human plus auditor. Output was frozen at a tagged commit before scoring against a draft reference key of 29 issues.</p>
+      </div>
+      <div class="case-col">
+        <h4>What I learned</h4>
+        <p>Reviewers agreed with 23 of 26 auditor findings. Precision was 91% with findings only but 50% when the model also asked clarification questions, so I removed the questions. None of the conditions found the seven boundary-value gaps, which is a real limit of the approach.</p>
+      </div>
+    </div>
+    <table class="res" style="margin-top:22px">
+      <tr><th>Condition</th><th>Share of key issues found</th></tr>
+      <tr><td>Human only</td><td>31%</td></tr>
+      <tr><td>Auditor only</td><td>72-76%</td></tr>
+      <tr><td>Human + auditor</td><td>69-76%</td></tr>
+    </table>
+    <p class="note">This is a pilot: two reviewers, a draft reference key, and ten held-out packages. It shows direction, not a conclusive result.</p>
+    <div class="tags"><span class="tag">Held-out test set</span><span class="tag">Precision vs recall</span><span class="tag">Frozen outputs</span><span class="tag">Human vs AI comparison</span></div>
+  </article>
+
+  <article class="case reveal">
+    <div class="case-top">
+      <h3>How I build</h3>
+      <span class="cat">Honest note</span>
+    </div>
+    <p style="font-size:14.5px;color:var(--text-2);line-height:1.7;margin-top:12px">I wrote the code with LLM assistance, one section at a time, rather than generating it in a single pass. I design the architecture, specify each piece, review what comes back, run the tests and own the result. My Python is working knowledge that I'm actively deepening, and I can walk through any model, validation rule or test in the repository.</p>
+  </article>
+</section>
+
+<section id="shipped" class="wrap">
+  <div class="sec-head reveal">
+    <p class="sec-label">shipped into real delivery</p>
+    <h2>Agents in live use</h2>
+    <p>Built on enterprise LLM platforms and adopted by real delivery teams, with a human expert approving the output.</p>
+  </div>
+  <div class="agents reveal">
+    <div class="agent"><span class="st">In use</span><h3>API test execution assistant</h3><p>LLM analysis of API test results on a live integration: flags discrepancies and links them to past defects.</p><span class="imp">~40 hrs of manual effort saved</span></div>
+    <div class="agent"><span class="st">In use</span><h3>ScenarioCraft</h3><p>Turns requirement and design documents into structured, module-wise test scenarios, with expert review of every output.</p><span class="imp">50% less test-design preparation effort</span></div>
+    <div class="agent"><span class="st">In use</span><h3>Payment file validation</h3><p>LLM-based XML validation against schema, designs and business rules.</p><span class="imp">~8 new defects found in a single run</span></div>
+    <div class="agent"><span class="st">In use</span><h3>Tax &amp; requirement analysis</h3><p>Interprets complex tax requirements and generates structured scenarios for a multi-country rollout.</p><span class="imp">Delivered coverage for a US &amp; Canada rollout</span></div>
+    <div class="agent"><span class="st">In use</span><h3>Macwiz, RAG training bot</h3><p>Retrieval-based reference agent over real documentation for team self-service.</p><span class="imp">Reduced onboarding friction</span></div>
+    <div class="agent"><span class="st">In progress</span><h3>RegIntel</h3><p>Searches curated regression records for matching incidents and fixes, separating confirmed evidence from possible similarity.</p><span class="imp">Building institutional memory</span></div>
+  </div>
+  <div class="agents reveal" style="margin-top:16px">
+    <div class="agent"><h3>Satellite Tracker MCP Server</h3><p>A custom Model Context Protocol server on FastMCP Cloud that exposes a live external API as callable tools.</p><span class="imp">Verified live in Claude.ai</span></div>
+    <div class="agent"><h3>24-hour hackathon MVP</h3><p>A working full-stack AI app shipped solo in one day with FastAPI, Gradio, Groq and Supabase, deployed to Render and Hugging Face.</p><span class="imp">Shipped solo in 24 hours</span></div>
+  </div>
+</section>
+
+<section id="approach" class="wrap">
+  <div class="sec-head reveal">
+    <p class="sec-label">what makes it work</p>
+    <h2>How I build</h2>
+  </div>
+  <div class="how reveal">
+    <div class="how-card"><h3>Start from the business problem</h3><p>I define what "good" looks like and how it will be measured before choosing a model or a pattern.</p></div>
+    <div class="how-card"><h3>Verify with code, not another model</h3><p>Where a claim can be checked deterministically, such as a citation or a quote, I check it in code.</p></div>
+    <div class="how-card"><h3>Human in the loop by design</h3><p>The model drafts and detects; a domain expert approves. Reviewer decisions are recorded.</p></div>
+    <div class="how-card"><h3>Evaluate on held-out data</h3><p>I compare against human baselines, freeze outputs before scoring and report the limits.</p></div>
+    <div class="how-card"><h3>Cost and model fit</h3><p>The right model for each task, with prompt trimming and context management as standard practice.</p></div>
+  </div>
+</section>
+
+<section id="background" class="wrap">
+  <div class="sec-head reveal">
+    <p class="sec-label">the foundation</p>
+    <h2>Enterprise delivery background</h2>
+    <p>I know what breaks in production because I've owned releases for a decade.</p>
+  </div>
+  <div class="qa-list reveal">
+    <div class="qa-row"><b>Delivery leadership</b><span>QA lead on enterprise ERP, mobile and integration programmes across the US, Canada, APAC, EMEA and LATAM, with concurrent multi-country go-lives, UAT cycles of 120+ users and 1,000+ test cases per release.</span></div>
+    <div class="qa-row"><b>Consultancy and client-side</b><span>Consultancy experience at Cognizant and Capgemini across banking, insurance and healthcare, and a long client-side role at WPP. Used to working with senior stakeholders and turning vague problems into measurable work.</span></div>
+    <div class="qa-row"><b>AI community</b><span>Selected for a 200-person Microsoft 365 Copilot (CoWork) pilot, active in an enterprise AI Centre of Excellence build-partner network, and run monthly AI community calls for a global QA community.</span></div>
+    <div class="qa-row"><b>Certifications</b><span>ISTQB Certified Tester AI Testing (CT-AI), 2025 · ISTQB Certified Tester Foundation Level (CTFL) · BrowserStack AI certification · Generative AI in Software Testing (2025) · Introduction to Machine Learning Models (AI) Testing (2025) · SAP Material Management Application Associate, SAP ERP 6.0 (2018).</span></div>
+    <div class="qa-row"><b>Learning</b><span>100x Engineers Applied GenAI six-month cohort, Cohort 7 (completed 2026) · IBM Data Science Professional Certificate (SQL and Python modules completed) · Prompt Engineering Specialization, Vanderbilt University (in progress).</span></div>
+  </div>
+</section>
+
+<section id="contact" class="contact wrap">
+  <p class="sec-label reveal">get in touch</p>
+  <h2 class="reveal">Open to applied AI &amp;<br>forward deployed roles</h2>
+  <p class="reveal">If you're putting LLM agents in front of real users and need someone who builds them and checks them, I'd like to hear about it. Based in London, UK.</p>
+  <div class="btns reveal" style="justify-content:center">
+    <a class="btn btn-fill" href="mailto:sarii.muthu@gmail.com">sarii.muthu@gmail.com</a>
+    <a class="btn btn-ghost" href="https://www.linkedin.com/in/sarithra-muthu" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="btn btn-ghost" href="index.html">QA &amp; evaluation portfolio →</a>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© 2026 Sarithra MS · London, UK</span>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
